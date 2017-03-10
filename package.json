@@ -1,0 +1,67 @@
+{
+  "name": "minelev-notifications",
+  "description": "Notifications for MinElev",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=7.7.2"
+  },
+  "scripts": {
+    "test": "standard && nsp check && ava",
+    "test-offline": "standard && ava",
+    "coverage": "nyc ava",
+    "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
+    "standard-fix": "standard --fix",
+    "start": "micro",
+    "now-deploy": "npm test && now --npm && now alias"
+  },
+  "keywords": [
+    "microservice",
+    "micro",
+    "MinElev",
+    "notifications",
+    "Telemark fylkeskommune"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telemark/minelev-notifications.git"
+  },
+  "bugs": {
+    "url": "https://github.com/telemark/minelev-notifications/issues"
+  },
+  "homepage": "https://github.com/telemark/minelev-notifications",
+  "now": {
+    "alias": [
+      "notifications.minelev.t-fk.win"
+    ],
+    "env": {
+      "NODE_ENV": "production",
+      "JWT_SECRET": "@minelev-jwt-secret",
+      "SENDGRID_SECRET": "@minelev-sendgrid-secret",
+      "BUDDY_SERVICE_URL": "@minelev-buddy-service-url"
+    },
+    "type": "npm"
+  },
+  "devDependencies": {
+    "ava": "0.18.2",
+    "coveralls": "2.12.0",
+    "nsp": "2.6.3",
+    "nyc": "10.1.2",
+    "standard": "9.0.1",
+    "test-listen": "1.0.1"
+  },
+  "dependencies": {
+    "axios": "0.15.3",
+    "jsonwebtoken": "7.3.0",
+    "marked": "0.3.6",
+    "micro": "7.1.0",
+    "sendgrid": "4.7.1"
+  }
+}

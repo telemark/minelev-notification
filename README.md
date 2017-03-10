@@ -1,2 +1,2 @@
-# minelev-notification
+# minelev-notifications
 Notifications for MinElev
