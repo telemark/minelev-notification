@@ -20,6 +20,7 @@
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
     "start": "micro",
+    "dummy": "micro dummy.js -p 8000",
     "now-deploy": "npm test && now --npm && now alias"
   },
   "keywords": [
