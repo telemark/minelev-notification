@@ -27,6 +27,10 @@ Returns
 
 ## Docker
 
+```
+$ docker build -t minelev-notifications .
+```
+
 ### Config ```production.env```
 ```bash
 NODE_ENV=production
