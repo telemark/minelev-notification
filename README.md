@@ -3,6 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/telemark/minelev-notifications.svg)](https://greenkeeper.io/)
 
 # minelev-notifications
+
 Notifications for MinElev
 
 ## API
@@ -26,18 +27,21 @@ Returns
 
 ## Docker
 
-### Config ```minelev-notifications.env```
+### Config ```production.env```
 ```bash
 NODE_ENV=production
 JWT_SECRET=@minelev-jwt-secret
 SENDGRID_SECRET=@minelev-sendgrid-secret
 MINELEV_URL=https://www.minelev.com
+BUDDY_SERVICE_URL=@minelev-buddy-service-url
 ```
 
 ## Related
-- [minelev-web](https://github.com/telemark/minelev-web) Web frontend for MinElev
+
+- [minelev-web](https://github.com/telemark/minelev-web) web frontend for MinElev
 - [minelev-logs](https://github.com/telemark/minelev-logs) Logs service for MinElev
-- [minelev-buddy](https://github.com/telemark/minelev-web) Buddy service for MinElev
+- [minelev-buddy](https://github.com/telemark/minelev-buddy) buddy service for MinElev
+- [minelev-leder](https://github.com/telemark/minelev-leder) web frontend for MinElev - school administration
 
 ## License
 
