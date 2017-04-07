@@ -5,6 +5,7 @@ const marked = require('marked')
 const { send } = require('micro')
 const resolveRequest = require('./lib/resolve-request')
 const handleWarnings = require('./lib/handle-warnings')
+const logger = require('./lib/logger')
 
 module.exports = async (request, response) => {
   const query = await resolveRequest(request)
@@ -25,7 +26,7 @@ module.exports = async (request, response) => {
         send(response, 200, html)
       }
     } catch (error) {
-      console.error(error)
+      logger('error', ['index', error])
       send(response, 500, error)
     }
   }
