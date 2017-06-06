@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=7.7.2"
+    "node": ">=7.8.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -20,7 +20,8 @@
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
     "start": "micro",
-    "now-deploy": "npm test && now --npm && now alias"
+    "dummy": "micro dummy.js -p 8000",
+    "now-deploy": "npm test && now --npm -E production.env && now alias"
   },
   "keywords": [
     "microservice",
@@ -41,12 +42,6 @@
     "alias": [
       "notifications.minelev.t-fk.win"
     ],
-    "env": {
-      "NODE_ENV": "production",
-      "JWT_SECRET": "@minelev-jwt-secret",
-      "SENDGRID_SECRET": "@minelev-sendgrid-secret",
-      "BUDDY_SERVICE_URL": "@minelev-buddy-service-url"
-    },
     "type": "npm"
   },
   "devDependencies": {
@@ -61,7 +56,9 @@
     "axios": "0.15.3",
     "jsonwebtoken": "7.3.0",
     "marked": "0.3.6",
-    "micro": "7.1.0",
-    "sendgrid": "4.7.1"
+    "micro": "7.3.0",
+    "sendgrid": "4.7.1",
+    "winston": "2.3.1",
+    "winston-papertrail": "1.0.4"
   }
 }
