@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=8.4.0"
+    "node": ">=8.9.4"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -22,7 +22,8 @@
     "start": "micro",
     "dev": "micro-dev",
     "dummy": "micro-dev dummy.js -p 8000",
-    "now-deploy": "npm test && now --npm -E production.env && now alias"
+    "deploy": "npm test && now && now alias",
+    "refresh": "rm -rf node_modules && rm package.json && npm install"
   },
   "keywords": [
     "microservice",
@@ -33,34 +34,35 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/telemark/minelev-notifications.git"
+    "url": "git+https://github.com/telemark/minelev-notifications.git"
   },
   "bugs": {
     "url": "https://github.com/telemark/minelev-notifications/issues"
   },
-  "homepage": "https://github.com/telemark/minelev-notifications",
+  "homepage": "https://github.com/telemark/minelev-notifications#readme",
   "now": {
     "alias": [
       "notifications.minelev.no"
     ],
-    "type": "npm"
+    "type": "npm",
+    "dotenv": "production.env"
   },
   "devDependencies": {
-    "ava": "0.22.0",
-    "coveralls": "2.13.1",
-    "micro-dev": "1.2.0",
-    "nsp": "2.7.0",
-    "nyc": "11.1.0",
+    "ava": "0.24.0",
+    "coveralls": "3.0.0",
+    "micro-dev": "2.2.0",
+    "nsp": "3.1.0",
+    "nyc": "11.4.1",
     "standard": "10.0.3",
-    "test-listen": "1.0.2"
+    "test-listen": "1.1.0"
   },
   "dependencies": {
-    "axios": "0.16.2",
-    "jsonwebtoken": "7.4.2",
-    "marked": "0.3.6",
-    "micro": "8.0.2",
-    "sendgrid": "5.2.2",
-    "winston": "2.3.1",
+    "axios": "0.17.1",
+    "jsonwebtoken": "8.1.0",
+    "marked": "0.3.12",
+    "micro": "9.1.0",
+    "sendgrid": "5.2.3",
+    "winston": "2.4.0",
     "winston-papertrail": "1.0.5"
   }
 }
