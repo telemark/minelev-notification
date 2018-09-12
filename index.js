@@ -1,31 +1,27 @@
-const readFileSync = require('fs').readFileSync
-const marked = require('marked')
-const { send } = require('micro')
-const resolveRequest = require('./lib/resolve-request')
-const handleWarnings = require('./lib/handle-warnings')
-const logger = require('./lib/logger')
+const Router = require('router')
+const finalhandler = require('finalhandler')
+const cors = require('cors')
+const jwt = require('express-jwt')
 
-module.exports = async (request, response) => {
-  const query = await resolveRequest(request)
+// Utilities
+const handler = require('./lib/handler')
+const config = require('./config')
+const handleUnauthorized = require('./lib/handle-unauthorized')
 
-  if (!query.isValid && query.domain !== 'frontpage') {
-    send(response, 401, query)
-  } else {
-    if (!query.action === 'frontpage') {
-      response.setHeader('Access-Control-Allow-Origin', '*')
-    }
-    try {
-      if (query.domain === 'warnings') {
-        const result = await handleWarnings(query)
-        send(response, 200, result)
-      } else {
-        const readme = readFileSync('./README.md', 'utf-8')
-        const html = marked(readme)
-        send(response, 200, html)
-      }
-    } catch (error) {
-      logger('error', ['index', error])
-      send(response, 500, error)
-    }
-  }
+// Initialize a new router
+const router = Router()
+
+// CORS
+router.use(cors())
+
+// JWT
+router.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/'] }))
+router.use(handleUnauthorized)
+
+// ROUTES
+router.get('/', handler.frontpage)
+router.post('/warnings', handler.warnings)
+
+module.exports = (request, response) => {
+  router(request, response, finalhandler(request, response))
 }
