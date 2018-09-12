@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
   JWT_SECRET: process.env.JWT_SECRET || 'Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go',
   SENDGRID_SECRET: process.env.SENDGRID_SECRET || 'Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go',

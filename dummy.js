@@ -1,5 +1,3 @@
-'use strict'
-
 const { send } = require('micro')
 const data = require('./test/data/dummy-teachers.json')
 

@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/telemark/minelev-notifications.svg?branch=master)](https://travis-ci.org/telemark/minelev-notifications)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/minelev-notifications.svg)](https://greenkeeper.io/)
 
 # minelev-notifications
 
@@ -50,5 +49,3 @@ BUDDY_SERVICE_URL=@minelev-buddy-service-url
 ## License
 
 [MIT](LICENSE)
-
-![Robohash image of minelev-notifications](https://robots.kebabstudios.party/minelev-notifications.png "Robohash image of minelev-notifications")
