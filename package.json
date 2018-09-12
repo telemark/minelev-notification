@@ -23,7 +23,7 @@
     "dev": "micro-dev",
     "dummy": "micro-dev dummy.js -p 8000",
     "deploy": "npm test && now && now alias",
-    "refresh": "rm -rf node_modules && rm package.json && npm install"
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
     "microservice",
