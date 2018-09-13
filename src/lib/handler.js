@@ -5,7 +5,7 @@ const handleWarnings = require('./handle-warnings')
 const logger = require('./logger')
 
 module.exports.frontpage = async (request, response) => {
-  const readme = await readFile('./README.md', 'utf-8')
+  const readme = await readFile('README.md', 'utf-8')
   logger('info', ['handler', 'getFrontPage'])
   send(response, 200, marked(readme))
 }

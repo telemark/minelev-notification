@@ -34,9 +34,10 @@ $ docker build -t minelev-notifications .
 ```bash
 NODE_ENV=production
 JWT_SECRET=@minelev-jwt-secret
-SENDGRID_SECRET=@minelev-sendgrid-secret
+MAIL_SERVICE_URL=https://mail.service.io
+MAIL_SERVICE_SECRET=@mail-service-secret
 MINELEV_URL=https://www.minelev.com
-BUDDY_SERVICE_URL=@minelev-buddy-service-url
+BUDDY_SERVICE_URL=https://buddy.service.io
 ```
 
 ## Related

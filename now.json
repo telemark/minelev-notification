@@ -1,0 +1,11 @@
+{
+  "name": "minelev-notifications",
+  "alias": [
+    "notifications.minelev.no"
+  ],
+  "type": "docker",
+  "dotenv": "production.env",
+  "features": {
+    "cloud": "v2"
+  }
+}

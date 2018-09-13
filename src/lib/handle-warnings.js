@@ -2,7 +2,7 @@ const axios = require('axios')
 const config = require('../config')
 const generateSystemJwt = require('./generate-system-jwt')
 const generateEmails = require('./generate-email')
-const sendMail = require('./zlett-send-mail')
+const sendMail = require('./send-mail')
 const logger = require('./logger')
 
 module.exports = data => {
