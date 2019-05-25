@@ -1,11 +1,48 @@
 {
+  "version": 2,
   "name": "minelev-notifications",
+  "scope": "minelev",
   "alias": [
     "notifications.minelev.no"
   ],
-  "type": "docker",
-  "dotenv": "production.env",
-  "features": {
-    "cloud": "v2"
-  }
+  "env": {
+    "NODE_ENV": "production",
+    "JWT_SECRET": "@minelev-jwt-secret",
+    "MINELEV_URL": "https://www.minelev.no",
+    "BUDDY_SERVICE_URL": "@minelev-buddy-service-url",
+    "MAIL_SERVICE_URL": "@mail-service-url",
+    "MAIL_SERVICE_SECRET": "@mail-service-secret",
+    "PAPERTRAIL_HOSTNAME": "minelev",
+    "PAPERTRAIL_HOST": "@tfk-papertrail-host",
+    "PAPERTRAIL_PORT": "@tfk-papertrail-port"
+  },
+  "builds": [
+    {
+      "src": "/index.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "/*.md",
+      "use": "@now/md"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "README.html"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/static/favicon.ico"
+    },
+    {
+      "src": "/warnings",
+      "dest": "/index.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+        "Access-Control-Allow-Methods": "POST, OPTIONS"
+      }
+    }
+  ]
 }
