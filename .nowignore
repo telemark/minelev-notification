@@ -1,0 +1,8 @@
+.dockerignore
+.env
+.travis.yml
+Dockerfile
+node_modules
+production.env
+renovate.json
+test
