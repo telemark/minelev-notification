@@ -24,21 +24,43 @@ Returns
 }
 ```
 
-## Docker
+## Development
+
+Add a local .env file
 
 ```
-$ docker build -t minelev-notifications .
+NODE_ENV=development
+JWT_SECRET=jwt-secret
+MINELEV_URL=url-to-minelev
+BUDDY_SERVICE_URL=buddy-service-url
+MAIL_SERVICE_URL=maiul-service-url
+MAIL_SERVICE_SECRET=mail-service-secret
+PAPERTRAIL_HOSTNAME=minelev
+PAPERTRAIL_HOST=logs.papertrails.com
+PAPERTRAIL_PORT=12345
 ```
 
-### Config ```production.env```
-```bash
-NODE_ENV=production
-JWT_SECRET=@minelev-jwt-secret
-MAIL_SERVICE_URL=https://mail.service.io
-MAIL_SERVICE_SECRET=@mail-service-secret
-MINELEV_URL=https://www.minelev.com
-BUDDY_SERVICE_URL=https://buddy.service.io
+Run the dev script
+
 ```
+$ now dev
+```
+
+## Deploy to ZEIT/Now - Manually
+
+Configure [now.json](now.json)
+
+Run the deployscript
+
+```
+$ npm run deploy
+```
+
+## Deploy to ZEIT/Now - Automatically
+
+Configure [now.json](now.json) and [GitHub actions](.github)
+
+Do a release
 
 ## Related
 
