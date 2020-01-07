@@ -9,7 +9,7 @@
     "NODE_ENV": "production",
     "JWT_SECRET": "@minelev-jwt-secret",
     "MINELEV_URL": "https://www.minelev.no",
-    "BUDDY_SERVICE_URL": "@minelev-buddy-service-url",
+    "BUDDY_SERVICE_URL": "https://tjommi.minelev.no",
     "MAIL_SERVICE_URL": "@mail-service-url",
     "MAIL_SERVICE_SECRET": "@mail-service-secret",
     "PAPERTRAIL_HOSTNAME": "minelev",
