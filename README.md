@@ -38,8 +38,7 @@ Returns
 ```JavaScript
 {
   success: true,
-  notifications: '<number-of-notifications>',
-  logs: ['log-from-each-notification']
+  log: ['log-from-notification']
 }
 ```
 
