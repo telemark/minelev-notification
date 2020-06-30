@@ -18,7 +18,7 @@
   },
   "builds": [
     {
-      "src": "/index.js",
+      "src": "/routes/*.js",
       "use": "@now/node"
     },
     {
@@ -37,7 +37,16 @@
     },
     {
       "src": "/warnings",
-      "dest": "/index.js",
+      "dest": "/routes/warnings.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+        "Access-Control-Allow-Methods": "POST, OPTIONS"
+      }
+    },
+    {
+      "src": "/yff",
+      "dest": "/routes/yff.js",
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization",
