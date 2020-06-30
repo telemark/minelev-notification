@@ -14,6 +14,25 @@ All API calls needs an Authorization header with valid jwt
 POST a generated warning from MinElev.
 This service will notify contact teachers if one of their students has received a warning.
 
+*See example data in test/data/warning.json*
+
+Returns
+
+```JavaScript
+{
+  success: true,
+  notifications: '<number-of-notifications>',
+  logs: ['log-from-each-notification']
+}
+```
+
+### ```POST /yff```
+
+POST a generated yff notification from MinElev-saksbehandler-robot.
+This service will send emails to the persons specified in the "copy to" field.
+
+*See example data in test/data/yff.json*
+
 Returns
 
 ```JavaScript
@@ -35,6 +54,7 @@ MINELEV_URL=url-to-minelev
 BUDDY_SERVICE_URL=buddy-service-url
 MAIL_SERVICE_URL=maiul-service-url
 MAIL_SERVICE_SECRET=mail-service-secret
+MAIL_VTFK_TEMPLATE_ID=sendgrid-template-id
 PAPERTRAIL_HOSTNAME=minelev
 PAPERTRAIL_HOST=logs.papertrails.com
 PAPERTRAIL_PORT=12345
@@ -50,10 +70,11 @@ $ now dev
 
 Configure [now.json](now.json)
 
-Run the deployscript
+Run the deployscripts
 
 ```
-$ npm run deploy
+$ npm run deploy:test
+$ npm run deploy:prod
 ```
 
 ## Deploy to ZEIT/Now - Automatically
