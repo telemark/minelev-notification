@@ -39,13 +39,13 @@
   },
   "homepage": "https://github.com/telemark/minelev-notifications#readme",
   "devDependencies": {
-    "ava": "3.9.0",
+    "ava": "3.12.1",
     "coveralls": "3.1.0",
     "nyc": "15.1.0",
     "standard": "14.3.4"
   },
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "0.20.0",
     "jsonwebtoken": "8.5.1",
     "winston": "2.4.5",
     "winston-papertrail": "1.0.5"
