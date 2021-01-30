@@ -8,7 +8,7 @@
   "env": {
     "NODE_ENV": "production",
     "JWT_SECRET": "@minelev-jwt-secret",
-    "MINELEV_URL": "https://www.minelev.no",
+    "MINELEV_URL": "https://minelev.vtfk.no",
     "BUDDY_SERVICE_URL": "@minelev-test-pifu-url",
     "MAIL_SERVICE_URL": "@mail-service-url",
     "MAIL_SERVICE_SECRET": "@mail-service-secret",
