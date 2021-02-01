@@ -1,5 +1,5 @@
 const handleYff = require('../lib/handle-yff')
-const logger = require('../lib/logger')
+const { logger } = require('@vtfk/logger')
 
 async function checkNotification (request, response) {
   logger('info', ['checkNotification', 'yff', 'start'])

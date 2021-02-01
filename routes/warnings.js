@@ -1,5 +1,5 @@
 const handleWarnings = require('../lib/handle-warnings')
-const logger = require('../lib/logger')
+const { logger } = require('@vtfk/logger')
 
 async function checkNotification (request, response) {
   logger('info', ['checkNotification', 'warnings', 'start'])
