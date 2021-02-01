@@ -12,7 +12,7 @@
     "BUDDY_SERVICE_URL": "@minelev-prod-pifu-url",
     "MAIL_SERVICE_URL": "@minelev-prod-mail-service-url",
     "MAIL_TEMPLATE_NAME": "@minelev-prod-mail-service-template-name",
-    "PAPERTRAIL_HOSTNAME": "minelev",
+    "PAPERTRAIL_HOSTNAME": "minelev-notifications",
     "PAPERTRAIL_HOST": "@tfk-papertrail-host",
     "PAPERTRAIL_PORT": "@tfk-papertrail-port"
   },
